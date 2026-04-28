@@ -80,27 +80,229 @@ body {
 }
 
 /* =============================================
-   HERO
+   HERO SECTION
 ============================================= */
 .hero {
     text-align: center;
-    padding: 80px 20px;
-    background: #f4f4f4;
+    padding: 100px 10% 80px;
+    background: #ffffff; /* Clean white background to contrast the nav */
+    color: #333;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #0d47a1;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.5rem;
+    color: #0d47a1;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero h1 span {
+    color: #00897b; /* Teal accent */
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* --- Hero Buttons --- */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #00897b;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 137, 123, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #00695c;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0d47a1;
+    border: 2px solid #0d47a1;
+}
+
+.btn-secondary:hover {
+    background-color: #0d47a1;
+    color: white;
+}
+
+/* --- Hero Highlights --- */
+.hero-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.highlight-item {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #edf2f7;
+    transition: transform 0.3s;
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.highlight-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.highlight-item p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.highlight-item strong {
+    display: block;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* --- Trust Bar --- */
+.hero-trust {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 40px;
+}
+
+.trust-item {
+    font-size: 0.85rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #00897b;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .btn-primary, .btn-secondary { width: 100%; max-width: 300px; }
 }
 
 /* =============================================
    FEATURES
 ============================================= */
 .features {
-    padding: 60px 10%;
+    padding: 80px 10%;
     text-align: center;
+    background-color: #f8fafc; /* Subtle background to separate from hero */
+}
+
+.features h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.5rem;
+    color: #0d47a1; /* Deep Medical Blue */
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Creating a small underline under the header */
+.features h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #00897b; /* Teal Accent */
+    margin: 10px auto;
+    border-radius: 2px;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
+
+/* =============================================
+   FEATURE CARDS
+============================================= */
+.features .card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease-in-out;
+    text-align: left; /* Align text to the left for better readability */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover Effect: Card lifts up and border changes color */
+.features .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(13, 71, 161, 0.1);
+    border-color: #00897b;
+}
+
+.features .card h3 {
+    font-size: 1.3rem;
+    color: #1a202c;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.features .card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* Specific Border Accents for each card */
+.features .card:nth-child(1) { border-top: 5px solid #0d47a1; } /* Blue */
+.features .card:nth-child(2) { border-top: 5px solid #00897b; } /* Teal */
+.features .card:nth-child(3) { border-top: 5px solid #0d47a1; } /* Blue */
+.features .card:nth-child(4) { border-top: 5px solid #00897b; } /* Teal */
 
 /* =============================================
    STATS
