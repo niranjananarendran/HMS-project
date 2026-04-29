@@ -318,149 +318,284 @@ body {
 /* =============================================
    FOOTER
 ============================================= */
+/* Footer Main */
 .footer-main {
     background: #111;
     color: #ccc;
     padding: 50px 10%;
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+/* Grid Layout */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+
+/* Each Column */
+.footer-col h4 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-left: 4px solid #00bcd4;
+    padding-left: 10px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+/* Contact Info Items */
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.info-item .icon {
+    margin-right: 10px;
+    color: #00bcd4;
+    font-size: 16px;
+}
+
+/* Support Hours */
+.footer-hours .row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Divider */
+.footer-divider {
+    margin: 30px 0;
+    border: none;
+    border-top: 1px solid #333;
+}
+
+/* Bottom Section */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #777;
+}
+
+.footer-tagline {
+    color: #00bcd4;
 }
 
 /* =============================================
    AUTH PAGES (IMPORTANT FIX)
    Apply ONLY when class="auth-body" is used
 ============================================= */
-.auth-body {
-    background: #0a1628;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.auth-card {
-    background: white;
-    border-radius: 14px;
-    width: 420px;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.5);
-    padding: 20px;
-}
-
 /* =============================================
-   RESPONSIVE
+   LOGIN PAGE STYLING (MATCHES YOUR HTML)
 ============================================= */
-@media (max-width: 768px) {
-    .navbar {
-        height: auto;
-        flex-wrap: wrap;
-    }
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Page background */
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    height: 100vh;
-}
-
-/* Center the card */
+/* Center full page */
 .auth-page {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #90b9cb, #203a43, #2c5364);
 }
 
-/* Card box */
+/* Card */
 .auth-card {
     background: #ffffff;
     width: 350px;
-    padding: 30px 25px;
+    padding: 25px 20px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
 /* Header */
 .card-header h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #333;
+    color: #0d47a1;
+    font-size: 22px;
 }
 
-/* Form body */
+/* Form layout */
 .card-body {
     display: flex;
     flex-direction: column;
 }
 
-/* Input fields */
+/* Fields */
 .field {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .field label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
+    font-size: 13px;
+    margin-bottom: 4px;
     color: #555;
+    display: block;
 }
 
+/* 🔽 Smaller input boxes */
 .field input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 8px 10px;
+    font-size: 13px;
     border-radius: 6px;
-    font-size: 14px;
-    transition: 0.3s;
+    border: 1px solid #ccc;
+    transition: 0.2s;
 }
 
+/* Focus effect */
 .field input:focus {
-    border-color: #2c5364;
+    border-color: #00897b;
     outline: none;
 }
 
 /* Button */
 .btn {
-    padding: 12px;
-    background: #2c5364;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 14px;
+    background: #7cb6b0;
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 15px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background: #1a3c4a;
+    background: #00695c;
 }
 
 /* Register text */
 .register-text {
     margin-top: 15px;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .register-text a {
-    color: #2c5364;
+    color: #1a47a1;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .register-text a:hover {
     text-decoration: underline;
+}
+/* =============================================
+   REGISTER PAGE FIX (COMPACT CARD)
+============================================= */
+
+/* Center page */
+.auth-body {
+    background: linear-gradient(135deg, #9bc0d0, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card */
+.auth-card {
+    width: 500px;
+    max-width: 90%;
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* Header */
+.card-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #a3c2f0;
+}
+
+.sub {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Section titles */
+.section-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 12px 0 6px;
+    color: #0d47a1;
+}
+
+/* Grid (2 columns) */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Fields */
+.field {
+    margin-bottom: 8px;
+}
+
+.field label {
+    font-size: 12px;
+    margin-bottom: 3px;
+    display: block;
+}
+
+/* 🔽 SMALL INPUT BOXES */
+.field input,
+.field select {
+    width: 100%;
+    padding: 6px 8px;   /* smaller height */
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button */
+.btn {
+    margin-top: 10px;
+    padding: 9px;
+    font-size: 13px;
+    background: #00897b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Terms */
+.terms {
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+/* Login text */
+.login-text {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
 }
